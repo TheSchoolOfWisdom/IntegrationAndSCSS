@@ -1,0 +1,226 @@
+/* Fonts */
+
+@font-face {
+  font-family: "Aniron";
+  src: url("fonts/WebFont.eot");
+  src: url("fonts/WebFont.eot?iefix") format("eot"), url("fonts/WebFont.woff") format("woff"), url("fonts/Aniron-7BaP.ttf") format("truetype"), url("fonts/WebFont.svg#webfont") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Party";
+  src: url("fonts/WebFont.eot");
+  src: url("fonts/WebFont.eot?iefix") format("eot"), url("fonts/WebFont.woff") format("woff"), url("fonts/partybusiness.ttf") format("truetype"), url("fonts/WebFont.svg#webfont") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Tngan";
+  src: url("fonts/WebFont.eot");
+  src: url("fonts/WebFont.eot?iefix") format("eot"), url("fonts/WebFont.woff") format("woff"), url("fonts/tngan.ttf") format("truetype"), url("fonts/WebFont.svg#webfont") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+/* Rings */
+
+@mixin ring($ring-color, $shadow-color, $size, $thickness, $shadow-depth) {
+  border: $thickness solid $ring-color;
+  border-radius: 50%;
+  width: $size;
+  height: $size;
+  box-shadow: inset $shadow-depth $shadow-depth 3px $shadow-color, $shadow-depth $shadow-depth 3px $shadow-color;
+}
+.orange-ring {
+  @include ring(#ff6803, #d3501d, 60px, 5px, 3px);
+}
+.yellow-ring {
+  @include ring(#fcca01, #d6b012, 200px, 16px, 6px);
+}
+@for $i from 1 through 6 {
+  .gray-ring-#{$i} {
+    @include ring(#414140, #353534, 35px + 10*$i, 2px + $i, 0px + $i);
+  }
+}
+
+.ring-block {
+  float: left;
+}
+.ring-block-1, .ring-block-2, .ring-block-3 {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.ring-block-3 {
+  position: relative;
+  width:  100%;
+  height: 100px;
+  .ring-block {
+  position: relative;
+  transform: translateY(-50%);
+  top: 50%;
+  margin-left: -25px;
+}
+}
+.ring-block-1 .text-block {
+  line-height: 55px;
+  margin: 0 15px;
+}
+.text-block {
+  font-size: 40px;
+}
+.ring-block-2 .text-block {
+  line-height: 200px;
+  margin-left: 25px;
+}
+.ring-block-1 {
+  margin: 40px 0 50px;
+}
+.ring-block-2 {
+  margin-bottom: 50px;
+}
+.ring-text-block-3 {
+  margin-bottom: 50px;
+}
+
+/* Other */
+
+.navbar-brand {
+  margin-left: 16px;
+  margin-right: 36px !important;
+}
+body {
+  font-family: Aniron !important;
+}
+.md-gimli .card-text-c {
+  font-size: 60px;
+  margin-top: 20px;
+}
+.carousel-inner {
+  h1 {
+    font-size: 66px !important;
+  }
+
+  h2 {
+    font-size: 48px !important;
+  }
+}
+.card-deck .card-title {
+  font-size: 60px;
+}
+.card-deck {
+  font-size: 30px;
+}
+.card-deck, .bd-example {
+  font-family: Party;
+}
+.transparent-black {
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 12px rgb(255, 255, 255);
+}
+.bg-orange {
+  background-color: #fe661d;
+}
+.text-orange {
+  color: #fe661d;
+}
+.md-through {
+  text-decoration: line-through;
+  text-decoration-color: #fe661d;
+}
+.carousel,
+.carousel-inner,
+.carousel-inner .item {
+  height: 100%;
+}
+.ex-text {
+  font-family: Tngan;
+  color: #fe661d;
+  top: -7px;
+  position: relative;
+}
+.carousel-caption {
+  top: 25%;
+  bottom: auto;
+}
+.carousel-inner > .carousel-item {
+  max-height: 480px !important;
+}
+.md-card-title {
+  padding-top: 26%;
+}
+.card {
+  cursor: pointer;
+}
+.card-img-overlay {
+  display: none;
+}
+.card:hover img {
+  opacity: 0.4;
+}
+.card:hover .card-img-overlay {
+  display: unset;
+}
+.md-container {
+  background-image: url(/images/bg_dark.png);
+  padding: 20px 30px 30px !important;
+}
+.md-light-container {
+  background-image: url(/images/bg_light.png);
+  padding: unset !important;
+}
+.card-deck {
+  margin: 40px 26px !important;
+}
+.md-light-container h1 {
+  margin: unset !important;
+  padding: 40px 0 0;
+  font-size: 20px;
+}
+.md-container h2 {
+  text-align: center;
+  padding-bottom: 13px;
+  font-size: 22px;
+}
+#sticky-footer li {
+  margin: 20px 0;
+}
+#sticky-footer li a {
+  margin: 0 !important;
+}
+h1 {
+  margin: 50px !important;
+  text-align: center;
+}
+.contact-form {
+  width: 80%;
+  margin: 0 auto;
+}
+ul {
+  margin-top: 15px !important;
+  margin-bottom: 15px !important;
+}
+.page-footer a {
+  color: #fff !important;
+}
+
+@media only screen and (max-width: 768px) {
+
+  .card-deck {
+    margin: 40px 26px 15px !important;
+  }
+  .row.md-row {
+    display: block;
+  }
+  .md-col {
+    margin-top: 30px;
+  }
+  .col-md-3:first-child ul {
+    margin-top: 30px !important;
+  }
+  .col-md-3:last-child ul {
+    margin-bottom: 30px !important;
+  }
+
+}
